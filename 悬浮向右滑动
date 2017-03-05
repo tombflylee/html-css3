@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>悬停滑动菜单</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font-size:16px;
+            font-family: "Adobe Song Std";
+            box-sizing:border-box;
+        }
+        ul{
+            list-style-type: none;
+        }
+        nav{
+            margin:10px;
+            position:absolute;
+            left:0;
+            top:0;
+        }
+        .nav-li{
+            position:relative;
+            width:400px;
+            height:100px;
+            background: lightgrey;
+            margin:4px;
+            line-height:100px;
+            text-align: center;
+        }
+        .nav-li:after{
+            content:"";
+            position: absolute;
+            z-index: 888;
+            left:0;
+            display: inline-block;
+            width:100px;
+            height:100px;
+            background:#282828;
+            -webkit-transition: width 0.4s;
+            -moz-transition: width 0.4s;
+            -o-transition:width 0.4s ;
+            transition: width 0.4s;
+        }
+        .icon{
+            font-family:"Social Circles" ;
+            font-size: 5em;
+            position: absolute;
+            z-index: 900;
+            left:0;
+            width:100px;
+            height:100px;
+            color:	#F0F0F0;
+            -webkit-transition: -webkit-transform 0.4s;
+            -moz-transition:-moz-transform 0.4s;
+            -o-transition:-o-transform 0.4s ;
+            transition: transform 0.4s;
+            -webkit-transform-origin:50% 50%;
+            transform-origin:50% 50%;
+        }
+        .text{
+            font-size:2em;
+            position:absolute;
+            left:40%;
+            z-index: 999;
+            -webkit-transition: color 0.4s,font-size 0.4s;
+            -moz-transition: color 0.4s,font-size 0.4s;
+            -o-transition:color 0.4s ,font-size 0.4s;
+            transition: color 0.4s,font-size 0.4s;
+        }
+        /*event*/
+        .nav-li:hover .text{
+            color:	#F0F0F0;
+            font-size:33px;
+        }
+        .nav-li:hover:after{
+            width:400px;
+        }
+        .nav-li:hover .icon{
+            -webkit-transform: rotate3d(0,0,1,360deg);
+            -moz-transform:  rotate3d(0,0,1,360deg);
+            -o-transform:rotate3d(0,0,1,360deg);
+            transform:rotate3d(0,0,1,360deg);
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li class="nav-li" id="twitter"><span class="icon">T</span><span class="text">Twitter</span></li>
+        <li class="nav-li" id="facebook"><span class="icon">F</span><span class="text">Facebook</span></li>
+        <li class="nav-li" id="instagram"><span class="icon">I</span><span class="text">Instagram</span></li>
+        <li class="nav-li" id="soundcloud"><span class="icon">N</span><span class="text">SoundCloud</span></li>
+        <li class="nav-li" id="youtube"><span class="icon">Y</span><span class="text">Youtube</span></li>
+    </ul>
+</nav>
+</body>
+</html>
