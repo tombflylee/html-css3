@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹出效果图</title>
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font-family: "Malayalam MN";
+            font-size:16px;
+        }
+        html,body{
+            width:100%;
+            height:100%;
+        }
+        a{
+            text-decoration: none;
+        }
+        .contain{
+            background: url(img/002.jpg) no-repeat;
+            background-size: 1400px;
+            background-attachment: fixed;
+            width:100%;
+            height:100%;
+        }
+        .cover{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:inherit;
+            filter:blur(1px);
+        }
+        .content{
+            position:absolute;
+            width:100%;
+            height:100%;
+            z-index: 999;
+        }
+        h1{
+            font-size:2em;
+            color:#66FF99 ;
+            width:800px;
+            text-align: center;
+            margin:50px auto;
+        }
+        .button-cover{
+            width:550px;
+            height:160px;
+            border:2px solid #F0F0F0;
+            border-radius: 30px/80px;
+            background: rgba(255,255,255,0.3);
+            margin:0 auto;
+        }
+        .button{
+            display: block;
+            width:200px;
+            height:80px;
+            line-height:80px;
+            font-size: 1.5em;
+            margin:40px auto;
+            color:	#fff;
+            border:2px solid #66FF99;
+            border-radius: 18px/40px;
+            text-align: center;
+            -webkit-transition: background 0.4s ease-in-out;
+            -moz-transition: background 0.4s ease-in-out;
+            -o-transition: background 0.4s ease-in-out;
+            transition: background 0.4s ease-in-out;
+        }
+        .button:hover{
+            background:#66FF99 ;
+        }
+        .pop-up-page{
+            width:100%;
+            height:100%;
+            position: absolute;
+            z-index: 1999;
+            background: rgba(0,0,0,0.5);
+            visibility: hidden;
+            opacity: 0;
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+        }
+        .popup{
+            position: relative;
+            box-sizing: border-box;
+            width:350px;
+            height:200px;
+            margin:120px auto;
+            padding:20px;
+            background:	#FFF ;
+            border-radius: 4px;
+
+        }
+        .popup h3{
+            font-size:1.2em;
+            margin-bottom:24px;
+        }
+        .popup p{
+            margin-bottom:5px;
+        }
+        .fa{
+            position:absolute;
+            top:12px;
+            right:13px;
+            font-size: 1.2em;
+            color:#000000;
+            -webkit-transition: color 0.4s ease-in-out;
+            -moz-transition: color 0.4s ease-in-out;
+            -o-transition: color 0.4s ease-in-out;
+            transition: color 0.4s ease-in-out;
+        }
+        /*event*/
+        .pop-up-page:target{
+            visibility: visible;
+            opacity: 1;
+        }
+        .fa:hover{
+            color: #66FF99
+        }
+    </style>
+</head>
+<body>
+<div class="contain">
+    <div class="cover"></div>
+    <div class="content">
+        <h1>Popup/Model Windows Without JavaScript</h1>
+        <div class="button-cover">
+            <a href="#page1" class="button">Let me popup</a>
+        </div>
+    </div>
+    <div id="page1" class="pop-up-page">
+        <div class="popup">
+            <h3>I am a Popup button!</h3>
+            <p>Thanks to click on me, now you can click the close icon to close me!</p>
+            <p>See you again!</p>
+            <a href="#" class="fa fa-times" aria-hidden="true"></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
